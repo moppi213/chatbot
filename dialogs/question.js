@@ -55,19 +55,19 @@ lib.dialog('travel', [
     },
     (session, args, next) => {
         // スコアを確認してユーザーがイメージした物を回答する
-        if (session.privateConversationData.score = 0) {
+        if (session.privateConversationData.score == 0) {
 
             // scoreが0より大きい場合、
             session.send("アルゼンチンはいかが？　http://www.arukikata.co.jp/country/AR/");
             builder.Prompts.choice(session, "行きたい？", menu);
 //            builder.Prompts.choice(session, "YES or NO!", menu);
 
-        } else if (session.privateConversationData.score = 1) {
+        } else if (session.privateConversationData.score == 1) {
             // scoreが0未満の場合、
             session.send("クロアチアがおすすめです！！　http://zagreb-apt.com/croatia-travel");
             builder.Prompts.choice(session, "行きたい？", menu);
 
-        } else if (session.privateConversationData.score = 2) {
+        } else if (session.privateConversationData.score == 2) {
             // scoreが0未満の場合、
             session.send("ベトナムはどうですか？　http://www.hankyu-travel.com/guide/vietnam/");
             builder.Prompts.choice(session, "行きたい？", menu);
