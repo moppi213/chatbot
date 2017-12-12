@@ -9,7 +9,7 @@ const triggerRegExp = "^help$"
 // 実装されているヘルプの一覧
 const func = [
     "wiki",
-    "20Q",
+    "travel",
     "weather"
 ]
 
@@ -26,8 +26,8 @@ lib.dialog('help_global', [
             case "wiki":
                 session.replaceDialog("help_wiki")
                 break;
-            case "20Q":
-                session.replaceDialog("help_20Q")
+            case "travel":
+                session.replaceDialog("help_travel")
                 break;
             case "weather":
                 session.replaceDialog("help_weather")
@@ -56,11 +56,11 @@ lib.dialog("help_wiki", [
     }
 ])
 
-// 20Qのヘルプを定義する
-lib.dialog("help_20Q", [
+// travelのヘルプを定義する
+lib.dialog("help_travel", [
     (session, args, next) => {
-        session.send("ゲームの20Qで遊べます");
-        session.endConversation("20Q と入力すると開始します");
+        session.send("ゲームのtravelで遊べます");
+        session.endConversation("travel と入力すると開始します");
     }
 ])
 // 天気予報のヘルプを定義する
