@@ -190,6 +190,42 @@ bot.customAction({
     }
 });
 
+// ★★★占い
+bot.customAction({
+    matches: /^uranai$/i,
+    onSelectAction: (session, args, next) => {
+        // 定期処理を実行されているかを判定
+ var zodiac = 9;
+ // 今日の日付を取得
+ var date = new Date();
+ var year = date.getFullYear();
+ var month = date.getMonth() + 1;
+ if (month < 10) { month = "0" + month; }
+ var day = date.getDate();
+ if (day < 10) { day = "0" + day; }
+ var dateString = year + "/" + month + "/" + day;
+ // Web  Ad  Fortune  APIから運勢を取得するリクエスト
+ var req = "http://api.jugemkey.jp/api/horoscope/free/jsonp/";
+ req += dateString;
+ req += "?callback=showContent";
+ // scriptタグに埋め込んで実効
+ var script = document.createElement("script");
+ script.charset = "shift jis";
+ script.src = req;
+ document.body.appendChild(script);]
+ // 占いの内容を表示
+ function showContent(fortune)
+ {
+  var content = null;
+  content = fortune["horoscope"] [dateString] [zodiac] ["content"];
+ if (!content) {
+ content = "error";
+ }
+ document.getElementById("content") .innerHTML = content;
+ }
+    }
+});
+
 // リマインドをキャンセルする
 bot.customAction({
     matches: /^remind cancel (.+)$/i,
