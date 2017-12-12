@@ -57,23 +57,27 @@ lib.dialog('travel', [
         // スコアを確認してユーザーがイメージした物を回答する
         if (session.privateConversationData.score = 0) {
 
-            // scoreが0より大きい場合、ガムを連想したということ
+            // scoreが0より大きい場合、
             session.send("アルゼンチンはいかが？　http://www.arukikata.co.jp/country/AR/");
+            　行きたい？");
             builder.Prompts.choice(session, "YES or NO!", menu);
 
         } else if (session.privateConversationData.score = 1) {
-            // scoreが0未満の場合、ノートパソコンをイメージしたということ
-            session.send("クロアチアがおすすめです！！　http://zagreb-apt.com/croatia-travel");
+            // scoreが0未満の場合、
+            session.send("クロアチアがおすすめです！！　http://zagreb-apt.com/croatia-travel
+            　行きたい？");
             builder.Prompts.choice(session, "YES or NO!", menu);
 
         } else if (session.privateConversationData.score = 2) {
-            // scoreが0未満の場合、ノートパソコンをイメージしたということ
+            // scoreが0未満の場合、
             session.send("ベトナムはどうですか？　http://www.hankyu-travel.com/guide/vietnam/");
+            　行きたい？");
             builder.Prompts.choice(session, "YES or NO!", menu);
 
         } else {
             //scoreが3だった時は回答不能
             session.send("台湾！！　http://www.hankyu-travel.com/guide/taiwan/");
+            　行きたい？");
             builder.Prompts.choice(session, "YES or NO!", menu);
         }
     },
@@ -81,7 +85,7 @@ lib.dialog('travel', [
         // 予想が当たったのかをユーザーが回答した時の処理
         if (menu[results.response.entity].score == 1) {
             session.endConversation("当たりました！");
-        } else if (menu[results.response.entity].score == -1) {
+        } else if (menu[results.response.entity].score == 0) {
             session.endConversation("外れました...");
         }
     }
