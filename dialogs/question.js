@@ -58,27 +58,24 @@ lib.dialog('travel', [
         if (session.privateConversationData.score = 0) {
 
             // scoreが0より大きい場合、
-            session.send("アルゼンチンはいかが？　http://www.arukikata.co.jp/country/AR/
-            　行きたい？");
-            builder.Prompts.choice(session, "YES or NO!", menu);
+            session.send("アルゼンチンはいかが？　http://www.arukikata.co.jp/country/AR/");
+            builder.Prompts.choice(session, "行きたい？", menu);
+//            builder.Prompts.choice(session, "YES or NO!", menu);
 
         } else if (session.privateConversationData.score = 1) {
             // scoreが0未満の場合、
-            session.send("クロアチアがおすすめです！！　http://zagreb-apt.com/croatia-travel
-            　行きたい？");
-            builder.Prompts.choice(session, "YES or NO!", menu);
+            session.send("クロアチアがおすすめです！！　http://zagreb-apt.com/croatia-travel");
+            builder.Prompts.choice(session, "行きたい？", menu);
 
         } else if (session.privateConversationData.score = 2) {
             // scoreが0未満の場合、
-            session.send("ベトナムはどうですか？　http://www.hankyu-travel.com/guide/vietnam/
-            　行きたい？");
-            builder.Prompts.choice(session, "YES or NO!", menu);
+            session.send("ベトナムはどうですか？　http://www.hankyu-travel.com/guide/vietnam/");
+            builder.Prompts.choice(session, "行きたい？", menu);
 
         } else {
             //scoreが3だった時は回答不能
-            session.send("台湾！！　http://www.hankyu-travel.com/guide/taiwan/
-            　行きたい？");
-            builder.Prompts.choice(session, "YES or NO!", menu);
+            session.send("台湾！！　http://www.hankyu-travel.com/guide/taiwan/");
+            builder.Prompts.choice(session, "行きたい？", menu);
         }
     },
     (session, results, next) => {
