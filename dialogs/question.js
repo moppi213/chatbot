@@ -58,7 +58,7 @@ lib.dialog('travel', [
         if (session.privateConversationData.score = 0) {
 
             // scoreが0より大きい場合、
-            session.send("アルゼンチンはいかが？　http://www.arukikata.co.jp/country/AR/");
+            session.send("アルゼンチンはいかが？　http://www.arukikata.co.jp/country/AR/
             　行きたい？");
             builder.Prompts.choice(session, "YES or NO!", menu);
 
@@ -70,13 +70,13 @@ lib.dialog('travel', [
 
         } else if (session.privateConversationData.score = 2) {
             // scoreが0未満の場合、
-            session.send("ベトナムはどうですか？　http://www.hankyu-travel.com/guide/vietnam/");
+            session.send("ベトナムはどうですか？　http://www.hankyu-travel.com/guide/vietnam/
             　行きたい？");
             builder.Prompts.choice(session, "YES or NO!", menu);
 
         } else {
             //scoreが3だった時は回答不能
-            session.send("台湾！！　http://www.hankyu-travel.com/guide/taiwan/");
+            session.send("台湾！！　http://www.hankyu-travel.com/guide/taiwan/
             　行きたい？");
             builder.Prompts.choice(session, "YES or NO!", menu);
         }
